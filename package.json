@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "parcel src/index.html --open",
+    "build": "perl bin/build.pl",
+    "clear": "rm -rf dist .parcel-cache",
+    "lint": "prettier --write . && eslint -c eslint.config.mjs ."
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/p5": "^1.7.6",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^16.0.0",
+    "parcel": "^2.13.3",
+    "prettier": "^3.5.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  },
+  "dependencies": {
+    "p5": "^1.11.3"
+  }
+}
