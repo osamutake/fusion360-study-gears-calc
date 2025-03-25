@@ -1,0 +1,37 @@
+# https://asukiaaa.blogspot.com/2023/04/create-zip-and-show-info-on-release-body-with-using-github-actions.html
+# https://zenn.dev/chiguniiita/articles/34f73c02f3d5a2
+# https://zenn.dev/shootacean/articles/how-to-use-pnpm-in-github-actions
+
+name: Generate Zip file
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: pnpm/action-setup@v2.2.2
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: generate dist files
+      run: pnpm build
+
+    - name: Create zip file
+      run: |
+        mkdir gear-calculator
+        ls -a | grep -vE '^(\.\.?|\.git(|ignore|hub)|gear-calculator)$' | xargs -I {} mv {} gear-calculator
+        zip -r gear-calculator_${{ github.ref_name }}.zip gear-calculator
+
+    - name: Upload assets
+      id: upload-assets
+      uses: softprops/action-gh-release@v1
+      with:
+        files: gear-calculator_${{ github.ref_name }}.zip
