@@ -11,8 +11,8 @@ export function generateMenu() {
   const list = elem('UL');
   const calculators = [helical_shift, helical_interval, internal_shift, internal_interval, bevel];
   const doms = calculators.map((calc) => calc.html);
-  const wrapper = elem('DIV', '', [doms[0]]);
   const page = Number(window.location.search.match(/calculator=(\d+)/)?.[1] ?? '0');
+  const wrapper = elem('DIV', '', [doms[page]]);
   calculators.forEach((calc, i) => {
     const label = elem('LABEL', localize(calc.title));
     const item = elem('LI', '', [label]);
