@@ -37,4 +37,6 @@ jobs:
       id: upload-assets
       uses: softprops/action-gh-release@v1
       with:
-        files: gear-calculator_${{ github.ref_name }}.zip
+        files: |
+          gear-calculator_${{ github.ref_name }}.zip
+          gear-calculator/dist/calc.html
