@@ -137,7 +137,7 @@ const definitions = [
     ['?', '?'],
     1,
   ],
-  ['ad', 'Preferential center radius<>目標中心距離', 'a_d', '', [13], 1],
+  ['ad', 'Desired center distance<>目標中心距離', 'a_d', '', [13], 1],
   ['mm', 'Module after adjustment<>調整後モジュール', 'm_m', '\\scriptsize m_n a_d / a', ['?'], 1],
 ] as const;
 

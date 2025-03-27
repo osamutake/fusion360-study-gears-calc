@@ -72,7 +72,7 @@ const definitions = [
   ['h', 'Tooth depth<>歯丈', 'h', '\\{2.25+y-(x_{n1}+x_{n2})\\}m_n', ['?'], 1],
   ['da', 'Tip radius<>歯先円直径', 'd_a', 'd+2h_a', ['?', '?'], 1],
   ['df', 'Root radius<>歯底円直径', 'd_f', 'd_a-2h', ['?', '?'], 1],
-  ['ad', 'Preferential center radius<>目標中心距離', 'a_d', '', [130], 1],
+  ['ad', 'Desired center distance<>目標中心距離', 'a_d', '', [130], 1],
   ['mm', 'Module after adjustment<>調整後モジュール', 'm_m', 'm_n a_d / a', ['?'], 1],
 ] as const;
 
